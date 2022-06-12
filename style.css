@@ -1,0 +1,426 @@
+/* imports ----------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Erica+One&family=Rubik&display=swap");
+@font-face {
+  font-family: "BASQUIAT";
+  src: local("fonts/BASQUIAT.otf") format("opentype");
+}
+/* mixins ----------------------------------------------*/
+/* color and font styles ----------------------------------------------*/
+/* general formatting ----------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 1vw;
+  color: #5E8FB5;
+  background-color: #FFFFFF;
+}
+
+/* common formatting ----------------------------------------------*/
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #DA5C5E;
+}
+
+.highlight {
+  display: flex;
+  font-family: "BASQUIAT";
+  font-size: clamp(1.5rem, 2.5vw, 4rem);
+  margin-top: 0.5em;
+  color: #FEEFDC;
+  background-color: #DA5C5E;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-title {
+  font-family: "BASQUIAT";
+  font-size: clamp(3rem, 5vw, 5rem);
+  align-self: center;
+  color: #DA5C5E;
+}
+
+/* header ----------------------------------------------*/
+header {
+  display: flex;
+  width: 100%;
+  background-color: #FEEFDC;
+  justify-content: center;
+  align-items: center;
+}
+header .wordmark {
+  font-family: "Erica One", cursive;
+  font-size: clamp(1rem, 3vw, 4rem);
+  color: #5E8FB5;
+  margin-left: 2em;
+}
+header .navigation {
+  margin-left: auto;
+  margin-right: 2em;
+  font-family: "BASQUIAT";
+  font-size: clamp(0.8rem, 2.5vw, 5rem);
+  color: #DA5C5E;
+}
+header .navigation .nav {
+  margin-left: 0.5em;
+}
+header .navigation .view-work {
+  padding-inline: 1vw;
+  background-color: #DA5C5E;
+  color: #FEEFDC;
+}
+header a.icon {
+  display: none;
+  margin-left: auto;
+  margin-right: 1.5rem;
+  align-content: center;
+  color: #DA5C5E;
+}
+
+/* intro ----------------------------------------------*/
+.intro {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  margin-top: 2em;
+}
+.intro .intro-img {
+  width: 40%;
+}
+.intro .intro-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5em;
+  justify-content: center;
+}
+.intro .intro-text .intro-phrase {
+  font-family: "BASQUIAT";
+  font-size: clamp(2.3rem, 4.5vw, 5rem);
+  color: #5E8FB5;
+}
+.intro .intro-text .intro-phrase .red {
+  color: #DA5C5E;
+}
+.intro .intro-text .intro-para {
+  width: 80%;
+  margin-block: 1em;
+  font-size: clamp(0.8rem, 1.5vw, 5rem);
+}
+.intro .read-more {
+  width: 3.8em;
+}
+
+/* about ----------------------------------------------*/
+.about {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  margin-top: 10em;
+}
+.about .about-text {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.about .about-text .about-title {
+  display: flex;
+  width: 100%;
+  font-family: "BASQUIAT";
+  color: #DA5C5E;
+  align-items: center;
+}
+.about .about-text .about-title .starbullet {
+  height: clamp(1.2rem, 2vw, 5em);
+}
+.about .about-text .about-title .about-heading {
+  font-size: clamp(1.8rem, 4vw, 5rem);
+  margin-left: 0.5em;
+}
+.about .about-text .about-para {
+  width: 80%;
+  font-size: clamp(0.8rem, 1.5vw, 5rem);
+  margin: 1em;
+}
+.about .about-text .download {
+  width: 6em;
+  margin-left: 0.5em;
+}
+.about .skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  margin-left: 5em;
+  gap: 0.8em;
+  align-content: center;
+}
+.about .skill-grid .grid-item {
+  padding: 0.5em;
+  padding-block: 0.1em;
+}
+
+/* my work ----------------------------------------------*/
+.mywork {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 10em;
+}
+.mywork .mywork-header {
+  display: flex;
+  width: 100%;
+  height: 20em;
+  background-color: #B8DAF3;
+  justify-content: center;
+  align-items: center;
+}
+.mywork .mywork-header .mywork-title {
+  height: 18em;
+}
+.mywork .brand-work {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 5em;
+  width: 70%;
+  gap: 1em;
+}
+.mywork .brand-work .brand-ls {
+  display: flex;
+}
+.mywork .brand-work .brand-logo {
+  width: 32%;
+  margin-right: 2%;
+}
+.mywork .brand-work .brand-sample {
+  width: 66%;
+}
+.mywork .ux-ui {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-inline: auto;
+  margin-top: 5em;
+}
+.mywork .ux-ui .uxui-content {
+  display: flex;
+}
+.mywork .ux-ui .uxui-square {
+  width: 32%;
+  margin-right: 2%;
+}
+.mywork .illustrations {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-inline: auto;
+  margin-top: 5em;
+  gap: 1em;
+}
+.mywork .illustrations .illus-content {
+  display: flex;
+  width: 100%;
+}
+.mywork .illustrations .illus-content .illus-square {
+  width: 35%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: 2%;
+}
+.mywork .illustrations .illus-content span {
+  width: 63%;
+  height: auto;
+  position: relative;
+}
+.mywork .illustrations .illus-content .illus-video {
+  width: 100%;
+  height: 100%;
+  top: -1;
+  left: 0;
+  position: absolute;
+}
+
+/* contact ----------------------------------------------*/
+.contact {
+  display: flex;
+  font-family: "Erica One", cursive;
+  margin-top: 10em;
+  background-color: #FEEFDC;
+}
+.contact .contact-container {
+  margin: auto;
+  padding-block: 7em;
+}
+.contact .contact-text {
+  font-family: "BASQUIAT";
+  font-size: 2vw;
+}
+.contact .contact-email {
+  font-size: 4vw;
+  color: #DA5C5E;
+}
+.contact .contact-number {
+  font-size: 2vw;
+  float: right;
+}
+
+/* footer ----------------------------------------------*/
+footer {
+  display: flex;
+  flex-direction: column;
+  padding-block: 3em;
+  background-color: #5E8FB5;
+  color: #FEEFDC;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-wordmark {
+  font-family: "Erica One", cursive;
+  font-size: 1.5vw;
+}
+footer .footer-text {
+  font-size: 0.8vw;
+}
+
+/* footer ----------------------------------------------*/
+@media (min-width: 1024px) {
+  .mywork .mywork-header {
+    height: 25em;
+  }
+  .mywork .mywork-header .mywork-title {
+    height: 23.5em;
+  }
+  .mywork .brand-work {
+    width: 60%;
+  }
+  .mywork .ux-ui {
+    width: 60%;
+  }
+  .mywork .illustrations {
+    width: 60%;
+  }
+}
+@media (min-width: 481px) and (max-width: 800px) {
+  header a.icon {
+    display: flex;
+  }
+  header .navigation {
+    display: none;
+  }
+
+  .intro .intro-img {
+    width: 40%;
+    align-self: center;
+  }
+  .intro .intro-text {
+    margin-top: 5em;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+  .about .about-text {
+    width: 100%;
+  }
+  .about .about-text .about-para {
+    width: 100%;
+  }
+  .about .skill-grid {
+    width: 50%;
+    margin-top: 5em;
+    margin-left: 0;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mywork .mywork-header {
+    height: 25em;
+  }
+  .mywork .mywork-header .mywork-title {
+    height: 23.5em;
+  }
+  .mywork .brand-work {
+    width: 80%;
+  }
+  .mywork .ux-ui {
+    width: 80%;
+  }
+  .mywork .illustrations {
+    width: 80%;
+  }
+}
+@media (min-width: 0px) and (max-width: 480px) {
+  header a.icon {
+    display: flex;
+  }
+  header .navigation {
+    display: none;
+  }
+
+  .intro {
+    flex-direction: column;
+    width: 90%;
+  }
+  .intro .intro-img {
+    width: 60%;
+    align-self: center;
+  }
+  .intro .intro-text {
+    margin-top: 10em;
+  }
+  .intro .intro-text .intro-para {
+    width: 90%;
+  }
+
+  .about {
+    flex-direction: column;
+    margin-top: 15em;
+  }
+  .about .about-text {
+    width: 100%;
+  }
+  .about .about-text .about-para {
+    margin-left: 0%;
+    width: 100%;
+  }
+  .about .about-text .download {
+    margin-left: 0%;
+    margin-top: 0%;
+  }
+  .about .skill-grid {
+    width: 100%;
+    margin-block: 10em;
+    margin-left: 0;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mywork .mywork-header {
+    height: 40em;
+  }
+  .mywork .mywork-header .mywork-title {
+    height: 27em;
+  }
+  .mywork .brand-work {
+    width: 90%;
+    margin-top: 10em;
+  }
+  .mywork .ux-ui {
+    width: 90%;
+    margin-top: 10em;
+  }
+  .mywork .illustrations {
+    width: 90%;
+    margin-top: 10em;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,520 @@
+/* imports ----------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Erica+One&family=Rubik&display=swap');
+@font-face {
+    font-family: "BASQUIAT";
+    src: local("fonts/BASQUIAT.otf") format("opentype");
+}
+
+/* mixins ----------------------------------------------*/
+@mixin center {
+    justify-content: center;
+    align-items: center;
+  }
+
+@mixin breakpoint($point) {
+    @if $point == large {
+        @media (min-width: 1024px) {@content;}
+    }
+
+    @else if $point == medium {
+        @media (min-width: 481px) and (max-width: 800px) {@content;}
+    }
+
+    @else if $point == small {
+        @media (min-width: 0px) and (max-width: 480px) {@content;}
+    }
+}
+
+/* color and font styles ----------------------------------------------*/
+$colors: #DA5C5E #FEEFDC #5E8FB5 #B8DAF3 #FFFFFF;
+
+/* general formatting ----------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1vw;
+    color: nth($colors, 3);
+    background-color: nth($colors, 5);
+}
+
+/* common formatting ----------------------------------------------*/
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: nth($colors, 1);
+}
+
+.highlight {
+    display: flex;
+    font-family: "BASQUIAT";
+    font-size: clamp(1.5rem, 2.5vw, 4rem);
+    margin-top: 0.5em;
+    color: nth($colors, 2);
+    background-color: nth($colors, 1);
+    @include center;
+}
+
+.work-title {
+    font-family: "BASQUIAT";
+    font-size: clamp(3rem, 5vw, 5rem);
+    align-self: center;
+    color: nth($colors, 1);
+}
+
+/* header ----------------------------------------------*/
+header {
+    display: flex;
+    width: 100%;
+    background-color: nth($colors, 2);
+    @include center;
+
+    .wordmark {
+        font-family: 'Erica One', cursive;
+        font-size: clamp(1rem, 3vw, 4rem);
+        color: nth($colors, 3);
+        margin-left: 2em;
+    }
+
+    .navigation {
+        margin-left: auto;
+        margin-right: 2em;
+        font-family: "BASQUIAT";
+        font-size: clamp(0.8rem, 2.5vw, 5rem);
+        color: nth($colors, 1);
+
+        .nav {
+            margin-left: 0.5em;
+        }
+
+        .view-work {
+            padding-inline: 1vw;
+            background-color: nth($colors, 1);
+            color: nth($colors, 2);
+        }
+    }
+
+    a.icon {
+        display: none;
+        margin-left: auto;
+        margin-right: 1.5rem;
+        align-content: center;
+        color: nth($colors, 1);
+    }
+}
+
+/* intro ----------------------------------------------*/
+.intro {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-top: 2em;
+
+    .intro-img {
+        width: 40%;
+    }
+    
+    .intro-text {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5em;
+        justify-content: center;
+
+        .intro-phrase {
+            font-family: "BASQUIAT";
+            // font-size: 4.5vw;
+            font-size: clamp(2.3rem, 4.5vw, 5rem);
+            color: nth($colors, 3);
+
+            .red {
+                color: nth($colors, 1);
+            }
+        }
+
+        .intro-para {
+            width: 80%;
+            margin-block: 1em;
+            font-size: clamp(0.8rem, 1.5vw, 5rem);
+        }
+    }
+
+    .read-more {
+        width: 3.8em;
+    }
+}
+
+/* about ----------------------------------------------*/
+.about {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-top: 10em;
+
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        .about-title {
+            display: flex;
+            width: 100%;
+            font-family: "BASQUIAT";
+            color: nth($colors, 1);
+            align-items: center;
+
+            .starbullet {
+                height: clamp(1.2rem, 2vw, 5em);
+            }
+
+            .about-heading {
+                font-size: clamp(1.8rem, 4vw, 5rem);
+                margin-left: .5em;
+            }
+        }
+
+        .about-para {
+            width: 80%;
+            font-size: clamp(0.8rem, 1.5vw, 5rem);
+            margin: 1em;
+        }
+
+        .download {
+            width: 6em;
+            margin-left: .5em;
+        }
+    }
+
+    .skill-grid {
+        display: flex;
+        flex-wrap: wrap;
+        width: 40%;
+        margin-left: 5em;
+        gap: 0.8em;
+        align-content: center;
+
+        .grid-item {
+            padding: .5em;
+            padding-block: .1em;
+        }
+    }
+}
+
+/* my work ----------------------------------------------*/
+.mywork {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10em;
+
+    .mywork-header {
+        display: flex;
+        width: 100%;
+        height: 20em;
+        background-color: nth($colors, 4);
+        @include center;
+
+        .mywork-title {
+            height: 18em;
+        }
+    }
+
+    .brand-work {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        margin-top: 5em;
+        width: 70%;
+        gap: 1em;
+
+        .brand-ls {
+            display: flex;
+        }
+
+        .brand-logo {
+            width: 32%;
+            margin-right: 2%;
+        }
+
+        .brand-sample {
+            width: 66%;
+        }
+    }
+
+    .ux-ui {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin-inline: auto;
+        margin-top: 5em;
+
+        .uxui-content {
+            display: flex;
+        }
+
+        .uxui-square {
+            width: 32%;
+            margin-right: 2%;
+        }
+    }
+
+    .illustrations {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin-inline: auto;
+        margin-top: 5em;
+        gap: 1em;
+
+        .illus-content {
+            display: flex;
+            width: 100%;
+    
+            .illus-square {
+                width: 35%;
+                height: fit-content;
+                margin-right: 2%;
+            }
+
+            span {
+                width: 63%;
+                height: auto;
+                position: relative;
+            }
+
+            .illus-video {
+                width: 100%;
+                height: 100%;
+                top: -1;
+                left: 0;
+                position: absolute;
+            }
+        }
+    }
+}
+
+/* contact ----------------------------------------------*/
+.contact {
+    display: flex;
+    font-family: 'Erica One', cursive;
+    margin-top: 10em;
+    background-color: nth($colors, 2);
+   
+    .contact-container {
+        margin: auto;
+        padding-block: 7em; 
+    }
+    
+    .contact-text {
+        font-family: "BASQUIAT";
+        font-size: 2vw;
+    }
+
+    .contact-email {
+        font-size: 4vw;
+        color: nth($colors, 1);
+    }
+
+    .contact-number {
+        font-size: 2vw;
+        float: right;
+    }
+}
+
+/* footer ----------------------------------------------*/
+footer {
+    display: flex;
+    flex-direction: column;
+    padding-block: 3em;
+    background-color: nth($colors, 3);
+    color: nth($colors, 2);
+    @include center;
+
+    .footer-wordmark {
+        font-family: 'Erica One', cursive;
+        font-size: 1.5vw;
+    }
+
+    .footer-text {
+        font-size: 0.8vw;
+    }
+}
+
+/* footer ----------------------------------------------*/
+@include breakpoint (large){
+
+    .mywork {
+        .mywork-header {
+            height: 25em;
+    
+            .mywork-title {
+                height: 23.5em;
+            }
+        }
+
+        .brand-work {
+            width: 60%;
+        }
+
+        .ux-ui {
+            width: 60%;
+        }
+
+        .illustrations {
+            width: 60%;
+        }
+    }
+}
+
+@include breakpoint (medium){
+    header{
+        a.icon {
+            display: flex;
+        }
+
+        .navigation {
+            display: none;
+        }
+    }
+
+    .intro {
+        .intro-img {
+            width: 40%;
+            align-self: center;
+        }
+
+        .intro-text {
+            margin-top: 5em;
+        }
+    }
+
+    .about {
+        flex-direction: column;
+
+        .about-text {
+            width: 100%;
+
+            .about-para {
+                width: 100%;
+            }
+        }
+
+        .skill-grid {
+            width: 50%;
+            margin-top: 5em;
+            margin-left: 0;
+            align-self: center;
+            @include center;
+        }
+    }
+
+    .mywork {
+        .mywork-header {
+            height: 25em;
+    
+            .mywork-title {
+                height: 23.5em;
+            }
+        }
+
+        .brand-work {
+            width: 80%;
+        }
+
+        .ux-ui {
+            width: 80%;
+        }
+
+        .illustrations {
+            width: 80%;
+        }
+    }
+}
+
+@include breakpoint (small){
+    header{
+        a.icon {
+            display: flex;
+        }
+
+        .navigation {
+            display: none;
+        }
+    }
+
+    .intro {
+        flex-direction: column;
+        width: 90%;
+
+        .intro-img {
+            width: 60%;
+            align-self: center;
+        }
+
+        .intro-text {
+            margin-top: 10em;
+
+            .intro-para {
+                width: 90%;
+            }
+        }
+    }
+
+    .about {
+        flex-direction: column;
+        margin-top: 15em;
+
+        .about-text {
+            width: 100%;
+
+            .about-para {
+                margin-left: 0%;
+                width: 100%;
+            }
+
+            .download {
+                margin-left: 0%;
+                margin-top: 0%;
+            }
+        }
+
+        .skill-grid {
+            width: 100%;
+            margin-block: 10em;
+            margin-left: 0;
+            align-self: center;
+            @include center;
+        }
+    }
+
+    .mywork {
+        .mywork-header {
+            height: 40em;
+    
+            .mywork-title {
+                height: 27em;
+            }
+        }
+
+        .brand-work {
+            width: 90%;
+            margin-top: 10em;
+        }
+
+        .ux-ui {
+            width: 90%;
+            margin-top: 10em;
+        }
+
+        .illustrations {
+            width: 90%;
+            margin-top: 10em;
+        }
+    }
+}
